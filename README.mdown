@@ -1,0 +1,5 @@
+TreemapKit
+==========
+
+TreemapKit is a Treemap implementation for Cocoa Touch.
+You can display Treemaps in iPhone, iPod touch and iPad.
