@@ -18,6 +18,8 @@
 
 @property (nonatomic, retain) id <TreemapViewCellDelegate> delegate;
 
+- (id)initWithFrame:(CGRect)frame;
+
 @end
 
 @protocol TreemapViewCellDelegate <NSObject>

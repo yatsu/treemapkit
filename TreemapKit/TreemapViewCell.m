@@ -17,7 +17,7 @@
 		self.layer.borderColor = [[UIColor whiteColor] CGColor];
 
 		self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height - 30, frame.size.width - 4, 14)];
-		valueLabel.font = [UIFont boldSystemFontOfSize:13];
+		valueLabel.font = [UIFont boldSystemFontOfSize:16];
 		valueLabel.textAlignment = UITextAlignmentRight;
 		valueLabel.textColor = [UIColor whiteColor];
 		valueLabel.backgroundColor = [UIColor clearColor];
@@ -26,7 +26,7 @@
 		[self addSubview:valueLabel];
 
 		self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height - 17, frame.size.width - 4, 14)];
-		textLabel.font = [UIFont boldSystemFontOfSize:13];
+		textLabel.font = [UIFont boldSystemFontOfSize:16];
 		textLabel.textAlignment = UITextAlignmentRight;
 		textLabel.textColor = [UIColor whiteColor];
 		textLabel.backgroundColor = [UIColor clearColor];

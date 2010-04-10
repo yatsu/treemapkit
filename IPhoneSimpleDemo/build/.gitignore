@@ -1,0 +1,3 @@
+*.build
+*-iphonesimulator
+*-iphoneos
