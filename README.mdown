@@ -1,9 +1,110 @@
 TreemapKit
 ==========
 
-TreemapKit is a Treemap implementation for Cocoa Touch.
-You can display Treemaps in iPhone, iPod touch and iPad.
+TreemapKit is a treemap implementation for Cocoa Touch.
+You can display treemaps in iPhone, iPod touch and iPad.
 
-[Click here to watch the simple demo app](http://www.flickr.com/photos/14555412@N05/4507143423/ )
+[Click here to see the simple demo app](http://www.flickr.com/photos/14555412@N05/4507143423/ )
 
 ![](http://farm3.static.flickr.com/2302/4507143463_63823457b8.jpg)
+
+How to use
+----------
+
+1. Copy TreemapKit folder to your source tree and add it to Xcode project.
+2. Import "TreemapView.h" from your code.
+3. Implement both TreemapViewDataSource and TreemapViewDelegate protocols.
+
+Class References
+----------------
+
+### TreemapView
+
+#### reloadData
+
+`- (void)reloadData`
+
+Reload the data of the treemap.
+
+Call this method to reload all the data that is used to construct the treemap including cells.
+If you want to change the cell content, implement `treemapView:updateCell:forIndex:forRect:`.
+
+### TreemapViewCell
+
+A basic implementation of the treemap cell.
+You can make a sub-class to show more information or images.
+
+#### textLabel
+
+`UILabel *textLabel`
+
+The label used for the main textual content of the tremap cell.
+
+#### valueLabel
+
+`UILabel *valueLabel`
+
+The label used to show a value of the cell.
+
+#### index
+
+`NSinteger index`
+
+The cell index.
+
+#### initWithFrame:
+
+`- (id)initWithFrame:(CGRect)frame`
+
+Initialize the cell with a frame.
+
+### TreemapViewDataSource
+
+The data source protocol for a TreemapView object.
+
+#### valuesForTreemapView: _(required method)_
+
+`- (NSArray *)valuesForTreemapView:(TreemapView *)treemapView;`
+
+Provides data for a TreemapView as a NSArray.
+
+Tree or other data structures are currently not supported.
+
+#### TreemapView:cellForIndex:forRect: _(required method)_
+
+`- (TreemapViewCell *)treemapView:(TreemapView *)treemapView cellForIndex:(NSInteger)index forRect:(CGRect)rect;`
+
+Returns a cell object for the specified place.
+You need to create a TreemapViewCell and return it.
+
+#### treemapView:separatorWidthForDepth:
+
+`- (float)treemapView:(TreemapView *)treemapView separatorWidthForDepth:(NSInteger)depth;`
+
+Returns a separator width for the specified depth.
+If you don't need to change the width for the specified depth, return 0.
+The default separator width is 0.
+
+#### treemapView:separationPositionForDepth:
+
+`- (NSInteger)treemapView:(TreemapView *)treemapView separationPositionForDepth:(NSInteger)depth;`
+
+Normally TreemapView separate two rectangles with calculating the areas, but if you want to separate two groups manually, return the index of the cells.
+If you don't need to change the separation position for the specified depth, return NSIntegerMax.
+
+### TreemapViewDelegate
+
+The delegate of a TreemapView object.
+
+#### treemapView:tapped:
+
+`- (void)treemapView:(TreemapView *)treemapView tapped:(NSInteger)index;`
+
+Tells the delegate that the specified cell is tapped.
+
+#### treemapView:updateCell:forIndex:forRect:
+
+`- (void)treemapView:(TreemapView *)treemapView updateCell:(TreemapViewCell *)cell forIndex:(NSInteger)index forRect:(CGRect)rect;`
+
+Tells the delegate that the specified cell should be updated.
+You need to update the cell content manually in this method.
