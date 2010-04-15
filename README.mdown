@@ -8,6 +8,11 @@ You can display treemaps in iPhone, iPod touch and iPad.
 
 ![](http://farm3.static.flickr.com/2302/4507143463_63823457b8.jpg)
 
+License
+-------
+
+TreemapKit is provided under the [MIT License](http://github.com/yatsu/treemapkit/blob/master/LICENSE.txt ).
+
 How to use
 ----------
 
