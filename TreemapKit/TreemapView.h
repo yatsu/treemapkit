@@ -5,10 +5,10 @@
 @protocol TreemapViewDelegate;
 
 @interface TreemapView : UIView <TreemapViewCellDelegate> {
-	id <TreemapViewDataSource> dataSource;
-	id <TreemapViewDelegate> delegate;
+    id <TreemapViewDataSource> dataSource;
+    id <TreemapViewDelegate> delegate;
 
-	BOOL initialized;
+    BOOL initialized;
 }
 
 @property (nonatomic, retain) id <TreemapViewDataSource> dataSource;
@@ -34,7 +34,7 @@
 
 @optional
 
-- (float)treemapView:(TreemapView *)treemapView separatorWidthForDepth:(NSInteger)depth;
+- (CGFloat)treemapView:(TreemapView *)treemapView separatorWidthForDepth:(NSInteger)depth;
 - (NSInteger)treemapView:(TreemapView *)treemapView separationPositionForDepth:(NSInteger)depth;
 
 @end
