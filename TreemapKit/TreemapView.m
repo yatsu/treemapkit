@@ -86,11 +86,18 @@
         bRect = CGRectMake(rect.origin.x + aWidth + sep, rect.origin.y, bWidth, bHeight);
     }
     else { // vertical layout
-        aWidth = bWidth = width;
-        aHeight = ceil((height - sep) * aRatio);
-        bHeight = height - sep - aHeight;
-        aRect = CGRectMake(rect.origin.x, rect.origin.y, aWidth, aHeight);
-        bRect = CGRectMake(rect.origin.x, rect.origin.y + aHeight + sep, bWidth, bHeight);
+        if (total == 0.0) {
+            aWidth = aHeight = bWidth = bHeight = 0.0;
+            aRect = CGRectMake(rect.origin.x, rect.origin.y, 0.0, 0.0);
+            bRect = CGRectMake(rect.origin.x, rect.origin.y + sep, 0.0, 0.0);
+        }
+        else {
+            aWidth = bWidth = width;
+            aHeight = ceil((height - sep) * aRatio);
+            bHeight = height - sep - aHeight;
+            aRect = CGRectMake(rect.origin.x, rect.origin.y, aWidth, aHeight);
+            bRect = CGRectMake(rect.origin.x, rect.origin.y + aHeight + sep, bWidth, bHeight);
+        }
     }
 
     [self calcNodePositions:aRect nodes:aArray width:aWidth height:aHeight depth:depth + 1 withCreate:createNode];
