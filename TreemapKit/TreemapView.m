@@ -157,12 +157,69 @@
 #pragma mark -
 #pragma mark TreemapViewCell delegate
 
+- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell
+           touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesBegan:withEvent:)]) {
+        [delegate treemapView:self touchesBegan:touches withEvent:event];
+    }
+}
+
+- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell
+       touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesCancelled:withEvent:)]) {
+        [delegate treemapView:self touchesCancelled:touches withEvent:event];
+    }
+}
+
+- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell
+           touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesEnded:withEvent:)]) {
+        [delegate treemapView:self touchesEnded:touches withEvent:event];
+    }
+}
+
+- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell
+           touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesMoved:withEvent:)]) {
+        [delegate treemapView:self touchesMoved:touches withEvent:event];
+    }
+}
+
 - (void)treemapViewCell:(TreemapViewCell *)treemapViewCell tapped:(NSInteger)index {
-    if ([delegate respondsToSelector:@selector(treemapView:tapped:)])
+    if ([delegate respondsToSelector:@selector(treemapView:tapped:)]) {
         [delegate treemapView:self tapped:index];
+    }
 }
 
 #pragma mark -
+#pragma mark UIView
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesBegan:withEvent:)]) {
+        [delegate treemapView:self touchesBegan:touches withEvent:event];
+    }
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesCancelled:withEvent:)]) {
+        [delegate treemapView:self touchesCancelled:touches withEvent:event];
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesEnded:withEvent:)]) {
+        [delegate treemapView:self touchesEnded:touches withEvent:event];
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:touchesMoved:withEvent:)]) {
+        [delegate treemapView:self touchesMoved:touches withEvent:event];
+    }
+}
+
+#pragma mark -
+#pragma mark NSObject
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {

@@ -3,12 +3,12 @@
 @protocol TreemapViewCellDelegate;
 
 @interface TreemapViewCell : UIControl {
-	UILabel *valueLabel;
-	UILabel *textLabel;
+    UILabel *valueLabel;
+    UILabel *textLabel;
 
-	NSInteger index;
+    NSInteger index;
 
-	id <TreemapViewCellDelegate> delegate;
+    id <TreemapViewCellDelegate> delegate;
 }
 
 @property (nonatomic, retain) UILabel *valueLabel;
