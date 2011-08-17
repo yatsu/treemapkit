@@ -8,7 +8,7 @@
 - (void)calcNodePositions:(CGRect)rect nodes:(NSArray *)nodes width:(CGFloat)width height:(CGFloat)height depth:(NSInteger)depth withCreate:(BOOL)createNode {
     if (nodes.count <= 1) {
         NSInteger index = [[[nodes objectAtIndex:0] valueForKey:@"index"] integerValue];
-        if (createNode) {
+        if (createNode || index >= self.subviews.count) {
             TreemapViewCell *cell = [dataSource treemapView:self cellForIndex:index forRect:rect];
             cell.index = index;
             cell.delegate = self;
