@@ -11,8 +11,8 @@
     BOOL initialized;
 }
 
-@property (nonatomic, retain) id <TreemapViewDataSource> dataSource;
-@property (nonatomic, retain) id <TreemapViewDelegate> delegate;
+@property (nonatomic, retain) IBOutlet id <TreemapViewDataSource> dataSource;
+@property (nonatomic, retain) IBOutlet id <TreemapViewDelegate> delegate;
 
 - (void)reloadData;
 
