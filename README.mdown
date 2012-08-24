@@ -113,3 +113,8 @@ Tells the delegate that the specified cell is tapped.
 
 Tells the delegate that the specified cell should be updated.
 You need to update the cell content manually in this method.
+
+Links
+-----
+
+* [@chris124's three20 branch](https://github.com/chris124/treemapkit/tree/three20 )
