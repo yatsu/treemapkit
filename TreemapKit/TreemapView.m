@@ -186,7 +186,7 @@
 }
 
 - (void)treemapViewCell:(TreemapViewCell *)treemapViewCell tapped:(NSInteger)index {
-    if ([delegate respondsToSelector:@selector(treemapView:tapped:)]) {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:tapped:)]) {
         [delegate treemapView:self tapped:index];
     }
 }
