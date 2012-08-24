@@ -84,6 +84,20 @@
 
 #pragma mark -
 
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    // resize rectangles with animation
+    [UIView beginAnimations:@"reload" context:nil];
+    [UIView setAnimationDuration:0.5];
+
+    [(TreemapView *)self.view reloadData];
+
+    [UIView commitAnimations];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 }

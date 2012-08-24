@@ -120,10 +120,10 @@
 - (void)createNodes {
     NSArray *nodes = [self getData];
     if (nodes && nodes.count > 0) {
-        [self calcNodePositions:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        [self calcNodePositions:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)
                           nodes:nodes
-                          width:ceil(self.frame.size.width)
-                         height:ceil(self.frame.size.height)
+                          width:ceil(self.bounds.size.width)
+                         height:ceil(self.bounds.size.height)
                           depth:0
                      withCreate:YES];
     }
@@ -132,10 +132,10 @@
 - (void)resizeNodes {
     NSArray *nodes = [self getData];
     if (nodes && nodes.count > 0) {
-        [self calcNodePositions:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)
+        [self calcNodePositions:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)
                           nodes:nodes
-                          width:ceil(self.frame.size.width)
-                         height:ceil(self.frame.size.height)
+                          width:ceil(self.bounds.size.width)
+                         height:ceil(self.bounds.size.height)
                           depth:0
                      withCreate:NO];
     }
